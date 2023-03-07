@@ -48,16 +48,8 @@ class ShortURLVisit extends Model
      *
      * @var string[]
      */
-    protected $fillable = [
-        'short_url_id',
-        'ip_address',
-        'operating_system',
-        'operating_system_version',
-        'browser',
-        'browser_version',
-        'visited_at',
-        'referer_url',
-        'device_type',
+    protected $guarded = [
+        'id'
     ];
 
     /**
@@ -82,6 +74,7 @@ class ShortURLVisit extends Model
     protected $casts = [
         'short_url_id' => 'integer',
         'visited_at'   => 'datetime',
+        'geo' => 'array'
     ];
 
     /**
