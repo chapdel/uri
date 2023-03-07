@@ -159,6 +159,10 @@ class Resolver
         if ($shortURL->track_device_type) {
             $visit->device_type = $this->guessDeviceType();
         }
+        
+         $visit->language = $request->getPreferredLanguage();
+        
+         $visit->geo = geoip($request->ip())->toArray();
     }
 
     /**
