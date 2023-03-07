@@ -20,6 +20,7 @@ class CreateShortUrlVisitsTable extends Migration
             $table->string('operating_system')->nullable();
             $table->string('operating_system_version')->nullable();
             $table->string('browser')->nullable();
+            $table->json('geo')->nullable();
             $table->string('browser_version')->nullable();
             $table->timestamp('visited_at');
             $table->timestamps();
